@@ -17,15 +17,7 @@ module.exports = {
   rules: {
     'linebreak-style': 0,
     'comma-dangle': ['error', 'never'],
-    'object-curly-newline': [
-      'error',
-      {
-        ObjectExpression: 'always',
-        ObjectPattern: { multiline: true },
-        ImportDeclaration: 'never',
-        ExportDeclaration: { multiline: true, minProperties: 1 }
-      }
-    ],
+    'object-curly-newline': 'off',
     'no-underscore-dangle': 'off',
     'no-restricted-globals': 'off',
     'no-return-assign': 'error',
