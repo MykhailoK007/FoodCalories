@@ -8,7 +8,6 @@ export const RootRouter = () => {
   const isAuthenticated = false;
   return (
     <Router history={history}>
-      {' '}
       {isAuthenticated ? <AuthenticatedRouter /> : <UnauthenticatedRouter />}
     </Router>
   );

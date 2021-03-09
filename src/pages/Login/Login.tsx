@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from '../../components/shared/Input';
 import css from './Login.module.scss';
 
 export const Login = () => (
@@ -20,10 +21,7 @@ export const Login = () => (
         </div>
       </div>
       <div className={css.formBodyActions}>
-        <label className={css.formBodyActionsRememberMe}>
-          <input type='checkbox' />
-          <span>Remember me</span>
-        </label>
+        <Input type='checkbox' style={css.formBodyActionsRememberMe} text='Remember me' />
       </div>
     </div>
     <button className={css.formSubmit}>Log In</button>
