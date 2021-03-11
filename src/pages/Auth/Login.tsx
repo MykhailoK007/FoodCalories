@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Input } from '../../components/shared/Input';
-import css from './Login.module.scss';
+import { SignUpRoute } from '../../router/routes';
+import css from './Auth.module.scss';
 
 export const Login = () => (
   <div className={css.form}>
@@ -26,7 +28,7 @@ export const Login = () => (
     </div>
     <button className={css.formSubmit}>Log In</button>
     <div className={css.formFooter}>
-      Don't have account? <span>Signup now</span>
+      Don't have account? <Link to={SignUpRoute}>Signup now</Link>
     </div>
   </div>
 );
