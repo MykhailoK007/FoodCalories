@@ -1,0 +1,44 @@
+@import 'styles/depth.scss';
+
+.pageWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.toggleDropDownMenu {
+  display: none;
+  position: absolute;
+  width: 40px;
+  top: 150px;
+  left: 0;
+  z-index: 2;
+  border: 2px solid $main-color;
+  border-left: none;
+  text-align: center;
+  border-radius: 0 3px 3px 0;
+  * {
+    font-size: 30px;
+  }
+}
+.aside {
+  width: 30%;
+}
+
+.content {
+  float: right;
+  min-width: 70%;
+  padding: 0 45px;
+}
+
+@media screen and (max-width: 768px) {
+  .aside {
+    display: none;
+  }
+  .toggleDropDownMenu {
+    display: unset;
+    background: none;
+  }
+  .showAside {
+    display: block;
+    width: 0;
+  }
+}

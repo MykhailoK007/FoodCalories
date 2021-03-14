@@ -4,6 +4,6 @@ import { AuthenticatedRouter } from './AuthenticatedRouter';
 import { UnauthenticatedRouter } from './UnauthenticatedRouter';
 
 export const RootRouter = () => {
-  const isAuthenticated = false;
+  const isAuthenticated = true;
   return <Router>{isAuthenticated ? <AuthenticatedRouter /> : <UnauthenticatedRouter />}</Router>;
 };
