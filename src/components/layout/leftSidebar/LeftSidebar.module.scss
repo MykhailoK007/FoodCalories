@@ -1,0 +1,59 @@
+@import 'styles/depth.scss';
+
+.leftSidebar {
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  width: 35%;
+  opacity: 0;
+  min-height: 100vh;
+  background: $left-sidebar-bg-color;
+  z-index: $left-sidebar-z-index;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease-in-out;
+  .section {
+    width: 80%;
+    margin: 30px 0;
+    font-weight: bold;
+
+    .title {
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      color: $left-sidebar-section-title-color;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+.leftSidebarActive {
+  visibility: visible;
+  opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  .leftSidebar {
+    width: 50%;
+    padding-top: 100px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .leftSidebar {
+    width: 100%;
+  }
+}
+@media screen and (max-height: 550px) {
+  .leftSidebar {
+    padding-top: 100px;
+    .section {
+      margin: 10px 0;
+    }
+  }
+}

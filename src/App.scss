@@ -1,4 +1,4 @@
-@import 'styles/deps.scss';
+@import 'styles/depth.scss';
 
 @font-face {
   font-family: 'NotoSansJP';
@@ -9,6 +9,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'NotoSansJP';
+  color: $main-color;
 }
 a {
   text-decoration: none;
