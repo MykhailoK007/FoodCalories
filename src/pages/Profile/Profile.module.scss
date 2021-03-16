@@ -8,6 +8,7 @@
 }
 .contentBody {
   width: 100%;
+  min-height: 50vh;
   background: $form-bg-color;
   border-radius: 5px;
   padding: 20px;
@@ -18,6 +19,7 @@
       font-size: 25px;
       height: 10px;
       outline: none;
+      cursor: pointer;
     }
     button:hover {
       color: $color-white;
@@ -53,8 +55,6 @@
   }
 }
 .additionalInfoSection {
-  .title {
-  }
   .subtitle {
     color: $color-white;
     margin-bottom: 15px;
