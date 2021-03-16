@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import { RiHome5Line, RiFileList3Line } from 'react-icons/ri';
 import { BiUserCircle } from 'react-icons/bi';
 import { FiCalendar } from 'react-icons/fi';
@@ -10,11 +11,18 @@ import {
   DishesRoute,
   WishlistRoute
 } from '../../../router/routes';
-import css from './LeftSidebar.module.scss';
 import { LinkWrapper } from '../../shared/linkWrapper';
+import css from './LeftSidebar.module.scss';
 
-export const LeftSidebar = () => (
-  <div className={css.leftSidebar}>
+interface LeftSidebarProps {
+  isDropDownMenuActive: boolean;
+}
+export const LeftSidebar = ({ isDropDownMenuActive }: LeftSidebarProps) => (
+  <div
+    className={cn(css.leftSidebar, {
+      [css.leftSidebarActive]: isDropDownMenuActive
+    })}
+  >
     <div className={css.section}>
       <div className={css.title}>Main</div>
       <nav>
