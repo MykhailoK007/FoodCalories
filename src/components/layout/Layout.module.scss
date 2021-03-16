@@ -15,9 +15,13 @@
   border-left: none;
   text-align: center;
   border-radius: 0 3px 3px 0;
+  opacity: 0.2;
   * {
     font-size: 30px;
   }
+}
+.toggleDropDownMenu:hover {
+  opacity: 1;
 }
 .aside {
   width: 30%;
@@ -26,19 +30,24 @@
 .content {
   float: right;
   min-width: 70%;
-  padding: 0 45px;
+  padding: 20px 15px;
 }
 
 @media screen and (max-width: 768px) {
   .aside {
     display: none;
+    padding-left: 40px;
   }
   .toggleDropDownMenu {
     display: unset;
     background: none;
   }
   .showAside {
-    display: block;
-    width: 0;
+    display: contents;
+    width: 0px;
+    margin: 0;
+  }
+  .content {
+    width: 100%;
   }
 }
