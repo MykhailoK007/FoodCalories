@@ -1,0 +1,58 @@
+@import 'styles/depth.scss';
+
+.editBtn {
+  text-align: end;
+  padding: 0 20px;
+  button {
+    font-size: 25px;
+    height: 10px;
+    outline: none;
+    cursor: pointer;
+  }
+  button:hover {
+    color: $color-white;
+  }
+}
+
+.profileInfo {
+  text-align: start;
+}
+.profileInfoAvatar {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  border-radius: 50%;
+  background: $form-page-bg-color;
+  border: 1px solid $left-sidebar-section-title-color;
+}
+
+.profileInfoName {
+  color: $color-white;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.profileInfoAbout {
+  .title {
+    color: $color-white;
+    font-weight: bold;
+  }
+  .subtitle {
+    margin: 15px 0;
+  }
+}
+.additionalInfoSection {
+  .subtitle {
+    color: $color-white;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profileInfoName {
+    margin-bottom: 20px;
+  }
+}

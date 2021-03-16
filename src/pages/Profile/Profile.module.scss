@@ -8,56 +8,8 @@
 }
 .contentBody {
   width: 100%;
-  min-height: 50vh;
+  min-height: 40vh;
   background: $form-bg-color;
   border-radius: 5px;
   padding: 20px;
-  .editBtn {
-    text-align: end;
-    padding: 0 20px;
-    button {
-      font-size: 25px;
-      height: 10px;
-      outline: none;
-      cursor: pointer;
-    }
-    button:hover {
-      color: $color-white;
-    }
-  }
-}
-.profileInfo {
-  text-align: start;
-}
-.profileInfoAvatar {
-  width: 100px;
-  height: 100px;
-  margin: 20px auto;
-  border-radius: 50%;
-  background: $form-page-bg-color;
-  border: 1px solid $left-sidebar-section-title-color;
-}
-
-.profileInfoName {
-  color: $color-white;
-  font-weight: bold;
-  font-size: 25px;
-  text-align: center;
-}
-
-.profileInfoAbout {
-  .title {
-    color: $color-white;
-    font-weight: bold;
-  }
-  .subtitle {
-    margin: 15px 0;
-  }
-}
-.additionalInfoSection {
-  .subtitle {
-    color: $color-white;
-    margin-bottom: 15px;
-    font-weight: bold;
-  }
 }
