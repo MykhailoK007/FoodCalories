@@ -1,0 +1,15 @@
+@import 'styles/depth.scss';
+
+.contentHeader {
+  height: 55px;
+  color: $color-white;
+  font-size: 25px;
+  padding-left: 45px;
+}
+.contentBody {
+  width: 100%;
+  min-height: 40vh;
+  background: $form-bg-color;
+  border-radius: 5px;
+  padding: 20px;
+}
