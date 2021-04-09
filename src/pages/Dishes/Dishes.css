@@ -1,0 +1,26 @@
+:root {
+  --color-grey: #9699a7;
+  --color-purple: #5f79e2;
+  --color-white: white;
+}
+
+.dishes--pagination-wrapper .MuiPaginationItem-root {
+  color: var(--color-grey);
+  font-weight: bold;
+}
+.dishes--pagination-wrapper .MuiPaginationItem-page.Mui-selected,
+.dishes--pagination-wrapper .MuiPaginationItem-page:hover,
+.dishes--pagination-wrapper .MuiPaginationItem-page.Mui-selected:hover {
+  background: var(--color-purple);
+  color: var(--color-white);
+}
+.dishes--pagination-wrapper .MuiPaginationItem-page:hover {
+  opacity: 0.7;
+}
+@media screen and (max-width: 768px) {
+  .dishes--pagination-wrapper .MuiPaginationItem-root {
+    min-width: 20px;
+    height: 20px;
+    font-size: 13px;
+  }
+}
