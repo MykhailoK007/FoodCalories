@@ -8,23 +8,33 @@
 }
 .formBody {
   width: 80%;
-  margin: 50px 0;
+  margin: 25px 0;
   .inputWrapper {
-    display: flex;
-    flex-direction: row-reverse;
-    height: 40px;
-
-    input {
-      width: 80%;
-      height: 30px;
-      padding: 0 10px;
-      border: 3px solid $form-inputs-border-color;
-      border-radius: 5px;
-      margin-left: 30px;
+    height: 75px;
+    label {
+      display: flex;
+      flex-direction: row-reverse;
+      height: 40px;
+      input {
+        width: 80%;
+        height: 30px;
+        padding: 0 10px;
+        border: 3px solid $form-inputs-border-color;
+        border-radius: 5px;
+        margin-left: 30px;
+      }
+      span {
+        width: 100px;
+      }
     }
-    span {
-      width: 100px;
-    }
+  }
+  .errorWrapper {
+    width: 100%;
+    margin: 0 auto;
+    color: $color-red;
+    font-style: italic;
+    text-align: end;
+    margin-bottom: 5px;
   }
 }
 .formSubmit {
@@ -56,17 +66,19 @@
   .formBody {
     margin: 50px auto;
     .inputWrapper {
-      height: 60px;
-      flex-direction: row;
-      flex-wrap: wrap-reverse;
-      justify-content: center;
-      align-items: center;
-      span {
-        width: 100%;
-      }
-      input {
-        width: 100%;
-        margin: 0;
+      label {
+        height: 60px;
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        align-items: center;
+        span {
+          width: 100%;
+        }
+        input {
+          width: 100%;
+          margin: 0;
+        }
       }
     }
   }
