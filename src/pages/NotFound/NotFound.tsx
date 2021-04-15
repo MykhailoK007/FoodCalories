@@ -1,3 +1,3 @@
 import React from 'react';
 
-export const NotFound = () => <div onClick={() => {}}>Not Found Page</div>;
+export const NotFound = () => <div>Not Found Page</div>;

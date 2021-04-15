@@ -28,8 +28,8 @@ export const Register = () => (
       <div className={css.formBodyActions}>
         <Input
           type='checkbox'
-          text='I accept'
-          style={css.formBodyActionsRememberMe}
+          label='I accept'
+          styles={{ inputWrapper: css.formBodyActionsRememberMe }}
           highlightedText='Terms and conditions'
         />
       </div>

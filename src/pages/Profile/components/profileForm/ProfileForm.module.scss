@@ -1,0 +1,88 @@
+@import 'styles/depth.scss';
+
+.formHeader {
+  color: $color-white;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 30px;
+}
+.formBody {
+  width: 80%;
+  margin: 25px 0;
+  .inputWrapper {
+    height: 75px;
+    label {
+      display: flex;
+      flex-direction: row-reverse;
+      height: 40px;
+      input {
+        width: 80%;
+        height: 30px;
+        padding: 0 10px;
+        border: 3px solid $form-inputs-border-color;
+        border-radius: 5px;
+        margin-left: 30px;
+      }
+      span {
+        width: 100px;
+      }
+    }
+  }
+  .errorWrapper {
+    width: 100%;
+    margin: 0 auto;
+    color: $color-red;
+    font-style: italic;
+    text-align: end;
+    margin-bottom: 5px;
+  }
+}
+.formSubmit {
+  text-align: end;
+  .cancel,
+  .submit {
+    color: $color-black;
+    background: $color-white;
+    width: 80px;
+    height: 40px;
+    margin-left: 30px;
+    border-radius: 5px;
+  }
+  .cancel {
+    color: black;
+    background: $color-white;
+    border: 2px solid $form-highlighted-text-color;
+  }
+  .submit {
+    background: $form-highlighted-text-color;
+    color: $color-white;
+  }
+}
+@media screen and (max-width: 768px) {
+  .formHeader {
+    text-align: center;
+    padding: 0;
+  }
+  .formBody {
+    margin: 50px auto;
+    .inputWrapper {
+      label {
+        height: 60px;
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        align-items: center;
+        span {
+          width: 100%;
+        }
+        input {
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .formSubmit {
+    text-align: center;
+  }
+}

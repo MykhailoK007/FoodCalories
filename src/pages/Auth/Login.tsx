@@ -23,7 +23,11 @@ export const Login = () => (
         </div>
       </div>
       <div className={css.formBodyActions}>
-        <Input type='checkbox' style={css.formBodyActionsRememberMe} text='Remember me' />
+        <Input
+          type='checkbox'
+          styles={{ inputWrapper: css.formBodyActionsRememberMe }}
+          label='Remember me'
+        />
       </div>
     </div>
     <button className={css.formSubmit}>Log In</button>
