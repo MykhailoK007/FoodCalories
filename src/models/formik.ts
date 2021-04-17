@@ -10,7 +10,7 @@ export interface InputProps {
   autoComplete?: 'off';
   styles?: {
     inputWrapper?: string;
-    errorWrapper?: string;
+    title?: string;
   };
   highlightedText?: string;
   error?: string;

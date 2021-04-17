@@ -1,6 +1,6 @@
 import React from 'react';
 import { useField } from 'formik';
-import { Input } from '../Input';
+import { Input } from '../Input/Input';
 import { FormikTextInputProps } from '../../../models/formik';
 
 export const FormikInput = ({ name, ...props }: FormikTextInputProps) => {

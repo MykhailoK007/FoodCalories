@@ -18,6 +18,7 @@
     color: $color-white;
   }
   .dropdownContent {
+    background: $header-bg-color;
     display: none;
     width: 100px;
     transform: translateX(-80px);

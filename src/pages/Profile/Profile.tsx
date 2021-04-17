@@ -5,7 +5,7 @@ import { ProfileInfo } from './components/profileInfo';
 import css from './Profile.module.scss';
 
 const inputsFields: InputProps[] = [
-  { name: 'userName', label: 'Username' },
+  { name: 'username', label: 'Username' },
   { name: 'firstName', label: 'First Name' },
   { name: 'lastName', label: 'Last Name' },
   { name: 'email', label: 'Email', type: 'email' },

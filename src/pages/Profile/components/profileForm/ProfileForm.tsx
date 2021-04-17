@@ -10,7 +10,7 @@ interface ProfileFormProps {
   inputsFields: InputProps[];
 }
 interface ProfileFormValues {
-  userName: string;
+  username: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -18,7 +18,7 @@ interface ProfileFormValues {
   telephone: string;
 }
 const defaultValues: ProfileFormValues = {
-  userName: '',
+  username: '',
   firstName: '',
   lastName: '',
   email: '',
@@ -30,8 +30,7 @@ export const ProfileForm = ({ handleClick, inputsFields }: ProfileFormProps) => 
   <Formik
     initialValues={defaultValues}
     onSubmit={() => {
-      // eslint-disable-next-line
-      console.log('Submit');
+      1;
     }}
     validationSchema={EditProfileForm}
   >
@@ -43,7 +42,7 @@ export const ProfileForm = ({ handleClick, inputsFields }: ProfileFormProps) => 
             <FormikInput
               type={inputData.type}
               name={inputData.name || ''}
-              styles={{ inputWrapper: css.inputWrapper, errorWrapper: css.errorWrapper }}
+              styles={{ inputWrapper: css.inputWrapper }}
               label={inputData.label}
             />
           ))}
