@@ -1,16 +1,37 @@
 @import 'styles/depth.scss';
 
-.editBtn {
-  text-align: end;
-  padding: 0 20px;
+.profileHeader {
+  display: flex;
+  justify-content: flex-end;
+}
+.dropdown {
   button {
     font-size: 25px;
     height: 10px;
     outline: none;
+    margin-bottom: 30px;
     cursor: pointer;
+    border: none;
+    background: none;
   }
   button:hover {
     color: $color-white;
+  }
+  .dropdownContent {
+    background: $header-bg-color;
+    display: none;
+    width: 100px;
+    transform: translateX(-80px);
+    position: absolute;
+    padding: 5px 10px;
+    border: 3px solid $form-inputs-border-color;
+    div {
+      cursor: pointer;
+      padding: 5px;
+    }
+  }
+  .showDropdown {
+    display: block;
   }
 }
 

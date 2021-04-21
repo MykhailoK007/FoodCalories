@@ -1,0 +1,15 @@
+@import 'styles/depth.scss';
+
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  color: $color-white;
+  font-size: 25px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+.contentHeader * {
+  color: $color-white;
+}

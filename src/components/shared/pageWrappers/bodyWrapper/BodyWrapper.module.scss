@@ -1,0 +1,16 @@
+@import 'styles/depth.scss';
+
+.contentBody {
+  position: relative;
+  width: 100%;
+  min-height: 75vh;
+  background: $form-bg-color;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .contentBody {
+    padding: 10px;
+  }
+}

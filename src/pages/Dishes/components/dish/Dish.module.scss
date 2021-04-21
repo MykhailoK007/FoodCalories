@@ -1,0 +1,75 @@
+@import 'styles/depth.scss';
+
+.dishWrapper {
+  @include flexColumn(flex-start);
+  width: 30%;
+  border: 1px solid $avatar-border-color;
+  margin: 10px 5px;
+  padding: 10px;
+  min-height: 400px;
+  header {
+    width: 100%;
+    padding: 15px 10px;
+    @include flexRow(null, space-between);
+  }
+}
+
+.caloryWrapper {
+  background: $color-yellow;
+  color: white;
+  height: 30px;
+  padding: 2px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.heartWrapper {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 2px solid $avatar-border-color;
+  line-height: 50px;
+  border-radius: 50%;
+}
+.heartWrapper:hover {
+  border: 3px solid $color-purple;
+  cursor: pointer;
+}
+
+.imageWrapper {
+  width: 80%;
+  min-height: 150px;
+  text-align: center;
+  line-height: 100%;
+  margin: 0 auto;
+  span {
+    line-height: 150px;
+    font-style: italic;
+  }
+}
+.title {
+  width: 100%;
+  color: $color-white;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .dishWrapper {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .dishWrapper {
+    width: 100%;
+  }
+  .caloryWrapper {
+    font-size: 12px;
+    height: 24px;
+  }
+  .title {
+    font-size: 16px;
+  }
+  .description {
+    font-size: 14px;
+  }
+}

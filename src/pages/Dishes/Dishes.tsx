@@ -1,0 +1,56 @@
+import React, { useRef, useState } from 'react';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { Pagination } from '@material-ui/lab';
+import { HeaderWrapper } from '../../components/shared/pageWrappers';
+import { BodyWrapper } from '../../components/shared/pageWrappers/bodyWrapper';
+import { Dish } from './components/dish';
+import { Filter } from './components/filter';
+import css from './Dishes.module.scss';
+import './Dishes.css';
+
+export const Dishes = () => {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const handleChangeCurrentPage = (e: any, page: number) => {
+    setCurrentPage(page);
+  };
+  const total = useRef(10);
+  return (
+    <div>
+      <HeaderWrapper>
+        <span>Dishes</span>
+        <button className={css.headerBtn}>Add own dish</button>
+      </HeaderWrapper>
+      <BodyWrapper>
+        <header className={css.header}>
+          <div className={css.title}>Showing result for " "</div>
+          <div className={css.searchWrapper}>
+            <span className={css.icon}>
+              <AiOutlineSearch />
+            </span>
+            <input type='text' />
+          </div>
+        </header>
+        <Filter fields={['Popularity', 'My dishes', 'Callories']} />
+        <div className={css.bodyWrapper}>
+          <Dish caloryPerHundred={200} image='' title='dish 1' description='description 1' />
+          <Dish caloryPerHundred={200} image='' title='dish 1' description='description 1' />
+          <Dish caloryPerHundred={200} image='' title='dish 1' description='description 1' />
+        </div>
+        <footer className={css.footer}>
+          <div className={css.footerPageInfo}>
+            {' '}
+            {currentPage} of {total.current}
+          </div>
+          <div className='dishes--pagination-wrapper'>
+            <Pagination
+              page={currentPage}
+              count={100}
+              onChange={handleChangeCurrentPage}
+              className=''
+            />
+          </div>
+        </footer>
+      </BodyWrapper>
+    </div>
+  );
+};
