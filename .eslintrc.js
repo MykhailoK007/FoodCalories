@@ -4,9 +4,15 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: ['airbnb', 'plugin:jest/recommended', 'jest-enzyme'],
-  plugins: ['babel', 'import', 'jsx-a11y', 'react', 'prettier'],
-  parser: 'babel-eslint',
+  extends: [
+    'airbnb',
+    'plugin:jest/recommended',
+    'jest-enzyme',
+    'plugin:@typescript-eslint/recommended',
+    'prettier'
+  ],
+  plugins: ['@typescript-eslint', 'babel', 'import', 'jsx-a11y', 'react', 'prettier'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
@@ -14,43 +20,62 @@ module.exports = {
       jsx: true
     }
   },
+  globals: {
+    React: true,
+    JSX: true
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  },
   rules: {
     'linebreak-style': 0,
-    'comma-dangle': ['error', 'never'],
+    'comma-dangle': ['warn', 'never'],
     'object-curly-newline': 'off',
     'no-underscore-dangle': 'off',
     'no-restricted-globals': 'off',
-    'no-return-assign': 'error',
+    'no-return-assign': 'warn',
+    'no-console': 'warn',
     'react/jsx-closing-tag-location': 'off',
-    'no-param-reassign': 'error',
+    'no-param-reassign': 'warn',
     'no-restricted-syntax': 'off',
-    'guard-for-in': 'error',
+    'guard-for-in': 'warn',
+    'arrow-parens': 'off',
+    'arrow-body-style': ['warn', 'as-needed'],
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'react/jsx-filename-extension': 'off',
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/no-extraneous-dependencies': ['warn', { devDependencies: true }],
     'class-methods-use-this': 'off',
-    'no-useless-constructor': 'error',
-    'no-empty-function': 'error',
+    'no-useless-constructor': 'warn',
+    'no-empty-function': 'warn',
     '@typescript-eslint/triple-slash-reference': 'off',
-    quotes: ['error', 'single'],
+    quotes: ['warn', 'single'],
     'react/prop-types': 'off',
     'react/state-in-constructor': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/jsx-wrap-multilines': [
+      'warn',
+      {
+        arrow: true,
+        return: true,
+        declaration: true
+      }
+    ],
     'no-use-before-define': 'off',
     camelcase: 'off',
     'import/no-unresolved': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/ban-types': 'off',
-    'react/jsx-fragments': ['error', 'element'],
+    'react/jsx-fragments': ['warn', 'element'],
     'react/jsx-one-expression-per-line': 'off',
-    'no-console': ['error', { allow: ['warn', 'error'] }],
     'jsx-a11y/label-has-for': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
     'react/require-default-props': 'off',
     'react/static-property-placement': 'off',
     'max-classes-per-file': 'off',
-    'func-names': 'error',
+    'func-names': 'warn',
     'no-shadow': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     'react/no-unescaped-entities': 'off',
@@ -58,20 +83,22 @@ module.exports = {
     'dot-notation': 'off',
     'react/default-props-match-prop-types': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
+    'no-unused-expressions': 'off',
+    '@typescript-eslint/no-unused-expressions': 'off', // maybe change later
     'jsx-a11y/media-has-caption': 'off',
     'consistent-return': 'off',
     'new-cap': 'off',
     'import/extensions': 'off',
-    'no-empty': ['error', { allowEmptyCatch: true }],
+    'no-empty': ['warn', { allowEmptyCatch: true }],
     'import/prefer-default-export': 'off',
     'react/jsx-curly-newline': 'off',
     '@typescript-eslint/no-inferrable-types': 'off',
     'react/sort-comp': 'off',
-    'jsx-quotes': ['error', 'prefer-single'],
-    'jsx-a11y/no-noninteractive-element-interactions': 'error',
-    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+    'jsx-quotes': ['warn', 'prefer-single'],
+    'jsx-a11y/no-noninteractive-element-interactions': 'warn',
+    'lines-between-class-members': ['warn', 'always', { exceptAfterSingleLine: true }],
     'react/destructuring-assignment': [
-      'error',
+      'warn',
       'always',
       {
         ignoreClassFields: true

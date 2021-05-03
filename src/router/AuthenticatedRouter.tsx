@@ -2,8 +2,9 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Layout } from '../components/layout';
 import { NotFound } from '../pages/NotFound';
-import { ProfileRoute } from '../router/routes';
+import { DishesRoute, ProfileRoute } from '../router/routes';
 import { Profile } from '../pages/Profile';
+import { Dishes } from '../pages/Dishes';
 
 export const AuthenticatedRouter = () => (
   <Layout>
@@ -13,6 +14,9 @@ export const AuthenticatedRouter = () => (
       </Route>
       <Route path={ProfileRoute}>
         <Profile />
+      </Route>
+      <Route path={DishesRoute}>
+        <Dishes />
       </Route>
       <Route path='*'>
         <NotFound />

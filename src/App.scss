@@ -14,9 +14,16 @@
 a {
   text-decoration: none;
 }
-button {
-  border: none;
-  background: none;
+button,
+input {
+  border-color: $form-inputs-border-color;
+  background: $form-inputs-bg;
+}
+ul {
+  list-style: none;
+}
+input[type='radio'] {
+  display: none;
 }
 html,
 body {
