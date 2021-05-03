@@ -4,6 +4,7 @@ import { Layout } from '../components/layout';
 import { DishesRoute, ProfileRoute } from '../router/routes';
 import { Profile } from '../pages/Profile';
 import { Dishes } from '../pages/Dishes';
+import { NotFound } from '../pages/NotFound';
 
 export const AuthenticatedRouter = () => (
   <Layout>
@@ -18,7 +19,7 @@ export const AuthenticatedRouter = () => (
         <Dishes />
       </Route>
       <Route path='*'>
-        <div>asdsad</div>
+        <NotFound />
       </Route>
     </Switch>
   </Layout>

@@ -27,7 +27,9 @@ function* signUpWorker(action: SignUpRequestAction) {
   try {
     const { access_token } = yield call(AuthApi.signUp, action.payload);
     localStorage.setItem('token', access_token);
+    yield put(setAuthorized());
     yield put(signUp.success(access_token));
+    history.push(ProfileRoute);
   } catch (e) {
     yield put(signUp.failure(e.data));
   }
