@@ -1,9 +1,15 @@
 import React from 'react';
-import './App.scss';
+import { Provider } from 'react-redux';
 import { RootRouter } from './router/RootRouter';
+import './App.scss';
+import store from './state/store';
 
 function App() {
-  return <RootRouter />;
+  return (
+    <Provider store={store}>
+      <RootRouter />
+    </Provider>
+  );
 }
 
 export default App;
