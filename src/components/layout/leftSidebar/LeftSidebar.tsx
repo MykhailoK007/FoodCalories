@@ -16,27 +16,55 @@ import css from './LeftSidebar.module.scss';
 
 interface LeftSidebarProps {
   isDropDownMenuActive: boolean;
+  handleClick(): void;
 }
-export const LeftSidebar = ({ isDropDownMenuActive }: LeftSidebarProps) => (
-  <div
-    className={cn(css.leftSidebar, {
-      [css.leftSidebarActive]: isDropDownMenuActive
-    })}
-  >
-    <div className={css.section}>
-      <div className={css.title}>Main</div>
-      <nav>
-        <LinkWrapper route={DashboardRoute} title='Dashboard' Icon={<RiHome5Line />} />
-        <LinkWrapper route={ProfileRoute} title='Profile' Icon={<BiUserCircle />} />
-      </nav>
-    </div>
-    <div className={css.section}>
-      <div className={css.title}>Dishes</div>
-      <nav>
-        <LinkWrapper route={MenuScheduleRoute} title='Menu Schedule' Icon={<FiCalendar />} />
-        <LinkWrapper route={DishesRoute} title='Dishes' Icon={<AiOutlineShop />} />
-        <LinkWrapper route={WishlistRoute} title='Wishlist' Icon={<RiFileList3Line />} />
-      </nav>
+export const LeftSidebar = ({ isDropDownMenuActive, handleClick }: LeftSidebarProps) => (
+  <div className={css.leftSidebarWrapper}>
+    <div
+      className={cn(css.leftSidebar, {
+        [css.leftSidebarActive]: isDropDownMenuActive
+      })}
+    >
+      <div className={css.section}>
+        <div className={css.title}>Main</div>
+        <nav>
+          <LinkWrapper
+            route={DashboardRoute}
+            title='Dashboard'
+            Icon={<RiHome5Line />}
+            handleClick={handleClick}
+          />
+          <LinkWrapper
+            route={ProfileRoute}
+            title='Profile'
+            Icon={<BiUserCircle />}
+            handleClick={handleClick}
+          />
+        </nav>
+      </div>
+      <div className={css.section}>
+        <div className={css.title}>Dishes</div>
+        <nav>
+          <LinkWrapper
+            route={MenuScheduleRoute}
+            title='Menu Schedule'
+            Icon={<FiCalendar />}
+            handleClick={handleClick}
+          />
+          <LinkWrapper
+            route={DishesRoute}
+            title='Dishes'
+            Icon={<AiOutlineShop />}
+            handleClick={handleClick}
+          />
+          <LinkWrapper
+            route={WishlistRoute}
+            title='Wishlist'
+            Icon={<RiFileList3Line />}
+            handleClick={handleClick}
+          />
+        </nav>
+      </div>
     </div>
   </div>
 );
