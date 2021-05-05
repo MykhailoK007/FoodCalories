@@ -41,10 +41,17 @@
 .profileInfoAvatar {
   width: 100px;
   height: 100px;
+  display: flex;
   margin: 20px auto;
   border-radius: 50%;
   background: $form-page-bg-color;
   border: 1px solid $left-sidebar-section-title-color;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  svg {
+    font-size: 70px;
+  }
 }
 
 .profileInfoName {

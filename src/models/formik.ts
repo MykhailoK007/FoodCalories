@@ -5,6 +5,7 @@ export interface InputProps {
   label?: string;
   disabled?: boolean;
   value?: string;
+  defaultValue?: string;
   name?: string;
   type?: 'text' | 'number' | 'password' | 'email' | 'checkbox' | 'radio' | 'tel';
   autoComplete?: 'off';
@@ -16,7 +17,7 @@ export interface InputProps {
   error?: string;
   onBlur?: (e: React.FocusEvent) => void;
   onFocus?: (e: React.FocusEvent) => void;
-  onChange?: (e: React.ChangeEvent) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 export interface FormikTextInputProps extends FormikInput<InputProps> {
   name: string;
