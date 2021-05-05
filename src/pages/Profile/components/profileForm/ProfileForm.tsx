@@ -1,9 +1,12 @@
 import React from 'react';
-import { Formik } from 'formik';
+import { Form, Formik } from 'formik';
+import { useDispatch, useSelector } from 'react-redux';
 import { InputProps } from '../../../../models/formik';
-import css from './ProfileForm.module.scss';
 import { FormikInput } from '../../../../components/shared/formikAdapter/FormikInput';
 import { EditProfileForm } from '../../../../utils/validation-schemas';
+import { updateUserInfo } from '../../../../state/actions/user.actions';
+import { AppState } from '../../../../state/store';
+import css from './ProfileForm.module.scss';
 
 interface ProfileFormProps {
   handleClick(): void;
@@ -13,49 +16,72 @@ interface ProfileFormValues {
   username: string;
   firstName: string;
   lastName: string;
-  email: string;
-  avatar: string;
-  telephone: string;
+  picture: string;
+  phoneNumber: string;
+  description: string;
+  email?: string;
 }
-const defaultValues: ProfileFormValues = {
-  username: '',
-  firstName: '',
-  lastName: '',
-  email: '',
-  avatar: '',
-  telephone: ''
-};
+export const ProfileForm = ({ handleClick, inputsFields }: ProfileFormProps) => {
+  const dispatch = useDispatch();
+  const {
+    username,
+    firstName = '',
+    lastName = '',
+    picture = '',
+    phoneNumber = '',
+    description = '',
+    email,
+    error
+  } = useSelector(({ user }: AppState) => user);
 
-export const ProfileForm = ({ handleClick, inputsFields }: ProfileFormProps) => (
-  <Formik
-    initialValues={defaultValues}
-    onSubmit={() => {
-      1;
-    }}
-    validationSchema={EditProfileForm}
-  >
-    {() => (
-      <div className={css.form}>
-        <div className={css.formHeader}>Here you can change profile data</div>
-        <div className={css.formBody}>
-          {inputsFields.map(inputData => (
-            <FormikInput
-              type={inputData.type}
-              name={inputData.name || ''}
-              styles={{ inputWrapper: css.inputWrapper }}
-              label={inputData.label}
-            />
-          ))}
+  const defaultValues: ProfileFormValues = {
+    username,
+    firstName,
+    lastName,
+    picture,
+    phoneNumber,
+    description,
+    email
+  };
+  const checkIsEmailChanged = (state: ProfileFormValues) => {
+    // eslint-disable-next-line no-param-reassign
+    state.email === email ? delete state.email : '';
+  };
+  return (
+    <Formik
+      initialValues={defaultValues}
+      onSubmit={async values => {
+        checkIsEmailChanged(values);
+        await Promise.resolve(dispatch(updateUserInfo.request(values)));
+        !error && handleClick();
+      }}
+      validationSchema={EditProfileForm}
+    >
+      <Form>
+        <div className={css.form}>
+          <div className={css.formHeader}>Here you can change profile data</div>
+          {error && <div className={css.message}>{error}</div>}
+          <div className={css.formBody}>
+            {inputsFields.map(inputData => (
+              <FormikInput
+                key={inputData.name}
+                type={inputData.type}
+                name={inputData.name!}
+                styles={{ inputWrapper: css.inputWrapper }}
+                label={inputData.label}
+              />
+            ))}
+          </div>
+          <div className={css.formSubmit}>
+            <button className={css.cancel} onClick={handleClick}>
+              Cancel
+            </button>
+            <button className={css.submit} type='submit'>
+              Update
+            </button>
+          </div>
         </div>
-        <div className={css.formSubmit}>
-          <button className={css.cancel} onClick={handleClick}>
-            Cancel
-          </button>
-          <button className={css.submit} onClick={handleClick}>
-            Update
-          </button>
-        </div>
-      </div>
-    )}
-  </Formik>
-);
+      </Form>
+    </Formik>
+  );
+};

@@ -1,4 +1,6 @@
 import axios from 'axios';
+import history from '../history';
+import { SignInRoute } from '../router/routes';
 
 const instance = axios.create({
   baseURL: 'https://food-calories-app.herokuapp.com/api'
@@ -13,5 +15,14 @@ instance.interceptors.request.use(req => {
   }
   return req;
 });
-
+instance.interceptors.response.use(
+  res => res,
+  error => {
+    if (error.response.data.statusCode === 401) {
+      localStorage.removeItem('token');
+      history.push(SignInRoute);
+    }
+    return Promise.reject(error);
+  }
+);
 export default { instance };

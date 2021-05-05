@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { AiOutlineUser } from 'react-icons/ai';
 import cn from 'classnames';
+import { AppState } from '../../../../state/store';
 import css from './ProfileInfo.module.scss';
 
 interface ProfileInfoProps {
@@ -7,6 +10,10 @@ interface ProfileInfoProps {
 }
 export const ProfileInfo = ({ handleClick }: ProfileInfoProps) => {
   const [isDropDownActive, setSsDropDownActive] = useState<boolean>(false);
+  const { firstName, lastName, email, username, phoneNumber, description, picture } = useSelector(
+    ({ user }: AppState) => user
+  );
+  const getFullName = `${firstName || ''} ${lastName || ''}` || 'Empty';
   return (
     <div>
       <div className={css.profileHeader}>
@@ -22,25 +29,27 @@ export const ProfileInfo = ({ handleClick }: ProfileInfoProps) => {
         </div>
       </div>
       <div className={css.profileInfo}>
-        <div className={css.profileInfoAvatar} />
-        <div className={css.profileInfoName}>FirstName LastName</div>
+        <div className={css.profileInfoAvatar}>
+          {picture ? <img src={picture} alt='Avatar' /> : <AiOutlineUser />}
+        </div>
+        <div className={css.profileInfoName}>{getFullName}</div>
         <div className={css.profileInfoAbout}>
           <div className={css.title}>About</div>
-          <div className={css.subtitle}>Hi, I'm user.</div>
+          <div className={css.subtitle}>{description}</div>
         </div>
       </div>
       <div className={css.profileAdditionalInfo}>
         <div className={css.additionalInfoSection}>
           <div className={css.title}>Username:</div>
-          <div className={css.subtitle}>admin</div>
+          <div className={css.subtitle}>{username}</div>
         </div>
         <div className={css.additionalInfoSection}>
           <div className={css.title}>Mobile:</div>
-          <div className={css.subtitle}>+380664413233</div>
+          <div className={css.subtitle}>{phoneNumber || 'Empty'}</div>
         </div>
         <div className={css.additionalInfoSection}>
           <div className={css.title}>E-mail:</div>
-          <div className={css.subtitle}>firsname@gmail.com</div>
+          <div className={css.subtitle}>{email}</div>
         </div>
       </div>
     </div>

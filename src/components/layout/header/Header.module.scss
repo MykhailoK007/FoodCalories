@@ -83,6 +83,13 @@
     height: 50px;
     border-radius: 50%;
     border: 3px solid $avatar-border-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    svg {
+      font-size: 25px;
+    }
   }
 }
 
