@@ -1,0 +1,26 @@
+@import 'styles/depth.scss';
+
+.editBtn {
+  border: none;
+  margin-right: 15px;
+  font-size: 20px;
+  background: none;
+  svg {
+    fill: $color-purple;
+  }
+}
+.removeBtn {
+  border: none;
+  margin-right: 10px;
+  font-size: 20px;
+  background: none;
+  svg {
+    fill: $color-red;
+  }
+}
+.editBtn:hover,
+.removeBtn:hover {
+  svg {
+    fill: $color-white;
+  }
+}

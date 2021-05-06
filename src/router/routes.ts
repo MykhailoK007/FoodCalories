@@ -5,3 +5,4 @@ export const ProfileRoute = '/profile';
 export const MenuScheduleRoute = '/menu-schedule';
 export const DishesRoute = '/dishes';
 export const WishlistRoute = '/wishlist';
+export const Ingredients = '/ingredients';

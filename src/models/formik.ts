@@ -6,7 +6,7 @@ export interface InputProps {
   disabled?: boolean;
   value?: string;
   name?: string;
-  type?: 'text' | 'number' | 'password' | 'email' | 'checkbox' | 'radio' | 'tel';
+  type?: 'text' | 'number' | 'password' | 'email' | 'checkbox' | 'radio' | 'tel' | 'textarea';
   autoComplete?: 'off';
   styles?: {
     inputWrapper?: string;

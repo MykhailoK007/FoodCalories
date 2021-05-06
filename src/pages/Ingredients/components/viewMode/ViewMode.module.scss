@@ -1,0 +1,35 @@
+@import 'styles/depth.scss';
+
+.avatarWrapper {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  border-radius: 50%;
+  background: $form-page-bg-color;
+  border: 1px solid $left-sidebar-section-title-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  svg {
+    font-size: 50px;
+  }
+}
+.calories {
+  font-weight: bold;
+  .count {
+    min-width: 100px;
+    max-width: 150px;
+    padding: 2px 10px;
+    margin: 10px 0;
+    background: $color-light-red;
+    color: $color-white;
+    border-radius: 5px;
+    text-align: end;
+  }
+}
+.description {
+  .subtitle {
+    font-weight: bold;
+  }
+}

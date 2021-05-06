@@ -1,0 +1,22 @@
+@import 'styles/depth.scss';
+
+.btnWrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+.submitBtn {
+  background: $form-highlighted-text-color;
+  color: $color-white;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+}
+.resetBtn {
+  background: $main-color;
+  color: $color-white;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  margin-left: 10px;
+}

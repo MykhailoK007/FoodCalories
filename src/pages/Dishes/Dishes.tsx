@@ -10,7 +10,7 @@ import './Dishes.css';
 
 export const Dishes = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const handleChangeCurrentPage = (e: any, page: number) => {
+  const handleChangeCurrentPage = (e: React.ChangeEvent<unknown>, page: number) => {
     setCurrentPage(page);
   };
   const total = useRef(10);
