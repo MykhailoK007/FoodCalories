@@ -16,7 +16,7 @@ export const LoginForm = Yup.object().shape({
 export const RegisterForm = Yup.object().shape({
   email: Yup.string().email().required(),
   username: Yup.string().min(5, 'Minimum 5 chars').max(15, 'Maximum 15 chars').required(),
-  password: Yup.string().required().min(6, 'Minimum 6 chars')
+  password: Yup.string().required().min(5, 'Minimum 5 chars')
 });
 
 export const EditIngredientForm = Yup.object().shape({

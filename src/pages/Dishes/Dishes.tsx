@@ -42,12 +42,7 @@ export const Dishes = () => {
             {currentPage} of {total.current}
           </div>
           <div className='dishes--pagination-wrapper'>
-            <Pagination
-              page={currentPage}
-              count={100}
-              onChange={handleChangeCurrentPage}
-              className=''
-            />
+            <Pagination page={currentPage} count={100} onChange={handleChangeCurrentPage} />
           </div>
         </footer>
       </BodyWrapper>

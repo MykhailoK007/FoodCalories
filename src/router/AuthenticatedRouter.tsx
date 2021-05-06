@@ -13,10 +13,10 @@ export const AuthenticatedRouter = () => (
       <Route path='/' exact>
         User is authenticated!
       </Route>
-      <Route path={ProfileRoute}>
+      <Route path={ProfileRoute} exact>
         <Profile />
       </Route>
-      <Route path={DishesRoute}>
+      <Route path={DishesRoute} exact>
         <Dishes />
       </Route>
       <Route path={Ingredients}>

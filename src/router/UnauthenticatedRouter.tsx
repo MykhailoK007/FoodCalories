@@ -7,13 +7,9 @@ import { SignInRoute, SignUpRoute } from './routes';
 
 export const UnauthenticatedRouter = () => (
   <Switch>
-    <Route path={SignInRoute}>
-      <Login />
-    </Route>
-    <Route path={SignUpRoute}>
-      <Register />
-    </Route>
-    <Route path='*' exact>
+    <Route path={SignInRoute} component={Login} />
+    <Route path={SignUpRoute} component={Register} />
+    <Route path='*'>
       <NotFound />
     </Route>
   </Switch>
