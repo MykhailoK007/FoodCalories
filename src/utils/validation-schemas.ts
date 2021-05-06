@@ -18,3 +18,14 @@ export const RegisterForm = Yup.object().shape({
   username: Yup.string().min(5, 'Minimum 5 chars').max(15, 'Maximum 15 chars').required(),
   password: Yup.string().required().min(5, 'Minimum 5 chars')
 });
+
+export const EditIngredientForm = Yup.object().shape({
+  name: Yup.string().max(20, 'Maximum 20 chars').required(),
+  description: Yup.string().max(250, 'Maximum 250 chars').required(),
+  picture: Yup.string().optional(),
+  calories: Yup.string().required()
+});
+export const NewDishForm = Yup.object().shape({
+  name: Yup.string().required(),
+  weight: Yup.number().required()
+});
