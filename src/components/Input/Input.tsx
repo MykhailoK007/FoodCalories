@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { InputProps } from '../../../models/formik';
+import { InputProps } from '../../models/formik';
 import css from './Input.module.scss';
 
 export const Input = ({ styles, label, highlightedText, error, ...props }: InputProps) => (

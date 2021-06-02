@@ -10,8 +10,8 @@ import {
   MenuScheduleRoute,
   DishesRoute,
   WishlistRoute
-} from '../../../router/routes';
-import { LinkWrapper } from '../../shared/linkWrapper';
+} from '../../router/routes';
+import { LinkWrapper } from '../../components/linkWrapper';
 import css from './LeftSidebar.module.scss';
 
 interface LeftSidebarProps {

@@ -1,6 +1,6 @@
 import { Form, Formik } from 'formik';
 import React from 'react';
-import { FormikInput } from '../../../../components/shared/formikAdapter/FormikInput';
+import { FormikInput } from '../../../../components/formikAdapter/FormikInput';
 import { InputProps } from '../../../../models/formik';
 import { EditIngredientForm } from '../../../../utils/validation-schemas';
 import css from './EditMode.module.scss';

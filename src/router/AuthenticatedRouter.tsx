@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Layout } from '../components/layout';
+import { Layout } from '../layout';
 import { NotFound } from '../pages/NotFound';
 import { DishesRoute, Ingredients, ProfileRoute } from '../router/routes';
 import { Profile } from '../pages/Profile';

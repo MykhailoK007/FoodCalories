@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
 import cn from 'classnames';
-import { AppState } from '../../../state/store';
+import { AppState } from '../../state/store';
 import css from './Header.module.scss';
 
 interface HeaderProps {

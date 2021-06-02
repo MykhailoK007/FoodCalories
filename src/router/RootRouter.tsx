@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Router } from 'react-router-dom';
+import { Redirect, Router } from 'react-router-dom';
 import { setAuthorized } from '../state/actions/auth.actions';
 import { AppState } from '../state/store';
 import { AuthenticatedRouter } from './AuthenticatedRouter';
 import { UnauthenticatedRouter } from './UnauthenticatedRouter';
 import history from '../history';
+import { SignInRoute } from './routes';
 
 export const RootRouter = () => {
   const { authorized } = useSelector(({ auth }: AppState) => auth);
@@ -13,9 +14,7 @@ export const RootRouter = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if (token) {
-      dispatch(setAuthorized());
-    }
+    token ? dispatch(setAuthorized()) : <Redirect to={SignInRoute} />;
   }, []);
   return (
     <Router history={history}>

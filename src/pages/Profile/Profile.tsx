@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Loader } from '../../components/loader';
 import { InputProps } from '../../models/formik';
 import { getUserInfo } from '../../state/actions/user.actions';
 import { AppState } from '../../state/store';
@@ -10,9 +11,16 @@ import css from './Profile.module.scss';
 export const Profile = () => {
   const [isEditModActive, setIsEditModActive] = useState<boolean>(false);
   const dispatch = useDispatch();
-  const { username, firstName, lastName, picture, phoneNumber, email, description } = useSelector(
-    ({ user }: AppState) => user
-  );
+  const {
+    username,
+    firstName,
+    lastName,
+    picture,
+    phoneNumber,
+    email,
+    description,
+    loaded
+  } = useSelector(({ user }: AppState) => user);
   const handleClick = useCallback(() => {
     setIsEditModActive(prev => !prev);
   }, [setIsEditModActive]);
@@ -30,7 +38,7 @@ export const Profile = () => {
     { name: 'description', label: 'About', placeholder: description }
   ];
   return (
-    <div>
+    <Loader loaded={loaded}>
       <header className={css.contentHeader}>Profile</header>
       <div className={css.contentBody}>
         {isEditModActive ? (
@@ -39,6 +47,6 @@ export const Profile = () => {
           <ProfileInfo handleClick={handleClick} />
         )}
       </div>
-    </div>
+    </Loader>
   );
 };
