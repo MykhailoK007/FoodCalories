@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { setAuthorized } from '../state/actions/auth.actions';
 import { AppState } from '../state/store';
 import { AuthenticatedRouter } from './AuthenticatedRouter';
@@ -14,7 +14,7 @@ export const RootRouter = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    token ? dispatch(setAuthorized()) : <Redirect to={SignInRoute} />;
+    token ? dispatch(setAuthorized()) : history.push(SignInRoute);
   }, []);
   return (
     <Router history={history}>
