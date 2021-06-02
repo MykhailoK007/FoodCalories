@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Pagination } from '@material-ui/lab';
-import { HeaderWrapper } from '../../components/shared/pageWrappers';
-import { BodyWrapper } from '../../components/shared/pageWrappers/bodyWrapper';
+import { HeaderWrapper } from '../../components/pageWrappers';
+import { BodyWrapper } from '../../components/pageWrappers/bodyWrapper';
 import { Dish } from './components/dish';
 import { Filter } from './components/filter';
 import css from './Dishes.module.scss';

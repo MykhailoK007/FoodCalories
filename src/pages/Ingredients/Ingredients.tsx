@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import cn from 'classnames';
 import IngredientItem from './components/IngredientsItem/IngredientsItem';
 import css from './Ingredients.module.scss';
-import Modal from '../../components/shared/modal/Modal';
+import Modal from '../../components/modal/Modal';
 import ViewMode from './components/viewMode/ViewMode';
 import EditMode from './components/editMode/EditMode';
 import { InputProps } from '../../models/formik';
