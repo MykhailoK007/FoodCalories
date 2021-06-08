@@ -1,5 +1,4 @@
 import axios from 'axios';
-import history from '../history';
 import { SignInRoute } from '../router/routes';
 
 const instance = axios.create({
@@ -20,7 +19,7 @@ instance.interceptors.response.use(
   error => {
     if (error.response.data.statusCode === 401) {
       localStorage.removeItem('token');
-      history.push(SignInRoute);
+      window.location.href = SignInRoute;
     }
     return Promise.reject(error);
   }

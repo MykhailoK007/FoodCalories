@@ -1,0 +1,27 @@
+@import 'styles/depth.scss';
+
+.dropDown {
+  &Box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50px;
+    right: 25px;
+    width: 200px;
+    min-height: 30px;
+    max-height: 400px;
+    background: $form-inputs-border-color;
+  }
+  &Item {
+    line-height: 30px;
+    width: 90%;
+    text-align: center;
+    color: $color-white;
+    border-bottom: 2px solid $form-highlighted-text-color;
+    cursor: pointer;
+  }
+}

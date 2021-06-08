@@ -32,6 +32,9 @@ export type SignInFailureAction = {
 export type SetTokenAction = {
   type: typeof AuthApi.SET_AUTHORIZED;
 };
+export type LogoutAction = {
+  type: typeof AuthApi.LOGOUT;
+};
 export interface AuthState {
   loaded: boolean;
   error: string;
@@ -45,4 +48,5 @@ export type AuthType =
   | SignInRequestAction
   | SignInSuccessAction
   | SignInFailureAction
-  | SetTokenAction;
+  | SetTokenAction
+  | LogoutAction;
