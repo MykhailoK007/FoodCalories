@@ -4,12 +4,13 @@ import {
   signIn,
   setAuthorized,
   SIGN_IN_REQUEST,
-  SIGN_UP_REQUEST
+  SIGN_UP_REQUEST,
+  LOGOUT
 } from '../actions/auth.actions';
 import * as AuthApi from '../../api/auth';
 import { SignInRequestAction, SignUpRequestAction } from '../types/auth';
 import history from '../../history';
-import { ProfileRoute } from '../../router/routes';
+import { ProfileRoute, SignInRoute } from '../../router/routes';
 
 function* signInWorker(action: SignInRequestAction) {
   try {
@@ -35,7 +36,16 @@ function* signUpWorker(action: SignUpRequestAction) {
   }
 }
 
+function* logoutWorker() {
+  yield localStorage.removeItem('token');
+  history.push(SignInRoute);
+}
+
 function* authorizationSaga() {
-  yield all([takeLatest(SIGN_UP_REQUEST, signUpWorker), takeLatest(SIGN_IN_REQUEST, signInWorker)]);
+  yield all([
+    takeLatest(SIGN_UP_REQUEST, signUpWorker),
+    takeLatest(SIGN_IN_REQUEST, signInWorker),
+    takeLatest(LOGOUT, logoutWorker)
+  ]);
 }
 export default authorizationSaga;

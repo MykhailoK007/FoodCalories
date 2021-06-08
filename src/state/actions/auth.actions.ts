@@ -10,6 +10,7 @@ export const SIGN_IN_FAILURE = 'SIGN_IN_FAILURE';
 export const SIGN_IN_REQUEST = 'SIGN_IN_REQUEST';
 
 export const SET_AUTHORIZED = 'SET_AUTHORIZED';
+export const LOGOUT = 'LOGOUT';
 
 export const signUp = {
   request: (data: SignUpBody): AuthType => ({
@@ -43,3 +44,4 @@ export const signIn = {
 export const setAuthorized = (): AuthType => ({
   type: SET_AUTHORIZED
 });
+export const logout = (): AuthType => ({ type: LOGOUT });

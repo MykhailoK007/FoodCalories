@@ -55,6 +55,11 @@ export default function auth(state = initialState, action: AuthType): AuthState 
         ...state,
         authorized: true
       };
+    case AuthActions.LOGOUT:
+      return {
+        ...state,
+        authorized: false
+      };
     default:
       return state;
   }

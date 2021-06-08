@@ -1,42 +1,32 @@
-import React from 'react';
-import cn from 'classnames';
+import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import css from './Modal.module.scss';
 
 interface ModalProps {
-  condition?: boolean;
-  children?: React.ReactNode;
-  handleClick?(): void;
-  isViewMode?: boolean;
-  isCreateMode?: boolean;
-  header?: boolean;
+  title: string;
+  handleClick(): void;
+  closeModal(): void;
 }
-const Modal = ({
-  condition = false,
-  children,
-  handleClick,
-  isViewMode = true,
-  isCreateMode,
-  header = true
-}: ModalProps) => (
-  <div
-    className={cn(css.modalWrapper, {
-      [css.showModalWrapper]: condition
-    })}
-  >
-    <div className={css.modal}>
-      {header && (
-        <header className={css.header}>
-          <div>
-            {isViewMode && 'Ingredient name'}
-            {!isViewMode && (!isCreateMode ? 'Edit' : 'New ingredient')}
-          </div>
-          <button className={css.closeBtn} onClick={handleClick}>
-            X
-          </button>
-        </header>
-      )}
-      <div className={css.modalBody}>{children}</div>
+const Modal = ({ title, handleClick, closeModal }: ModalProps) => {
+  const modal: HTMLElement | null = document.getElementById('modal-root');
+  const div: HTMLDivElement = document.createElement('div');
+  useEffect(() => {
+    modal!.append(div);
+    return () => {
+      modal!.removeChild(div);
+    };
+  }, [div, modal]);
+  const Content = () => (
+    <div className={css.modalBg}>
+      <div className={css.modalWrapper}>
+        <div className={css.title}>{title}</div>
+        <div className={css.buttonsWrapper}>
+          <button onClick={handleClick}>Accept</button>
+          <button onClick={closeModal}>Cancel</button>
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+  return ReactDOM.createPortal(<Content />, modal!);
+};
 export default Modal;
