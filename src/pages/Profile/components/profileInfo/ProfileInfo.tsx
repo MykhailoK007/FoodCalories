@@ -31,6 +31,11 @@ export const ProfileInfo = ({ handleClick }: ProfileInfoProps) => {
       <div className={css.profileInfo}>
         <div className={css.profileInfoAvatar}>
           {picture ? <img src={picture} alt='Avatar' /> : <AiOutlineUser />}
+
+          <label className={css.editAvatar}>
+            Edit
+            <input type='file' accept='image/*' />
+          </label>
         </div>
         <div className={css.profileInfoName}>{getFullName}</div>
         <div className={css.profileInfoAbout}>
@@ -55,3 +60,7 @@ export const ProfileInfo = ({ handleClick }: ProfileInfoProps) => {
     </div>
   );
 };
+
+// const AvatarEditor = () => {
+
+// }
