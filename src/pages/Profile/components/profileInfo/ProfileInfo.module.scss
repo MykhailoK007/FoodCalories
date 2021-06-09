@@ -41,6 +41,7 @@
 .profileInfoAvatar {
   width: 100px;
   height: 100px;
+  position: relative;
   display: flex;
   margin: 20px auto;
   border-radius: 50%;
@@ -49,6 +50,26 @@
   overflow: hidden;
   justify-content: center;
   align-items: center;
+  .editAvatar {
+    display: none;
+  }
+  &:hover {
+    .editAvatar {
+      position: absolute;
+      display: block;
+      width: 100%;
+      bottom: 0px;
+      height: 30px;
+      text-align: center;
+      color: $color-white;
+      background: rgba($color: $color-black, $alpha: 0.4);
+      left: 50%;
+      transform: translateX(-50%);
+      input {
+        display: none;
+      }
+    }
+  }
   svg {
     font-size: 70px;
   }

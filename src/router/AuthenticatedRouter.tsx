@@ -5,7 +5,7 @@ import { NotFound } from '../pages/NotFound';
 import { DishesRoute, Ingredients, ProfileRoute } from '../router/routes';
 import { Profile } from '../pages/Profile';
 import { Dishes } from '../pages/Dishes';
-import Ingredient from '../pages/Ingredients/Ingredients';
+// import Ingredient from '../pages/Ingredients/Ingredients';
 
 export const AuthenticatedRouter = () => (
   <Layout>
@@ -19,9 +19,7 @@ export const AuthenticatedRouter = () => (
       <Route path={DishesRoute} exact>
         <Dishes />
       </Route>
-      <Route path={Ingredients}>
-        <Ingredient />
-      </Route>
+      <Route path={Ingredients}>{/* <Ingredient /> */}</Route>
       <Route path='*'>
         <NotFound />
       </Route>

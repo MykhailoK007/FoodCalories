@@ -25,11 +25,11 @@ export const ProfileForm = ({ handleClick, inputsFields }: ProfileFormProps) => 
   const dispatch = useDispatch();
   const {
     username,
-    firstName = '',
-    lastName = '',
-    picture = '',
-    phoneNumber = '',
-    description = '',
+    firstName,
+    lastName,
+    picture,
+    phoneNumber,
+    description,
     email,
     error
   } = useSelector(({ user }: AppState) => user);
