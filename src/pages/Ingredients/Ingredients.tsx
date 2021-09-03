@@ -17,6 +17,7 @@ const tableHeadData = ['', 'Name', 'Description', 'Calories/100g', 'Actions'];
 //   { name: 'image', label: 'Image url' },
 //   { name: 'description', label: 'Description', type: 'text' }
 // ];
+// new comment
 
 const Ingredient = () => {
   // const [showModal, setShowModal] = useState(false);
