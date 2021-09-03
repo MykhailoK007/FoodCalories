@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Router } from 'react-router-dom';
-import { setAuthorized } from '../state/actions/auth.actions';
-import { AppState } from '../state/store';
+import { setAuthorized } from '../store/actions/auth.actions';
+import { AppState } from '../store/store';
 import { AuthenticatedRouter } from './AuthenticatedRouter';
 import { UnauthenticatedRouter } from './UnauthenticatedRouter';
 import history from '../history';

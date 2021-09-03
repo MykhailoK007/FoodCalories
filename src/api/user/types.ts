@@ -12,3 +12,5 @@ export interface UserInfoResponse {
 }
 
 export type UpdateUserInfoBody = Partial<Omit<UserInfoResponse, 'id' | 'role'>>;
+
+// export type

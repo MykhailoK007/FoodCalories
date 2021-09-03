@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import cn from 'classnames';
-import { AppState } from '../../state/store';
+import { AppState } from '../../store/store';
 import { DropDown, DropDownItem } from '../../components';
-import { logout } from '../../state/actions/auth.actions';
+// import { logout } from '../../store/actions/auth.actions';
 import css from './Header.module.scss';
-import Modal from '../../components/modal/Modal';
+// import Modal from '../../components/modal/Modal';
 
 interface HeaderProps {
   toggleBtn(): void;
@@ -15,10 +15,10 @@ interface HeaderProps {
 export const Header = ({ toggleBtn, isDropDownMenuActive }: HeaderProps) => {
   const { username, picture } = useSelector(({ user }: AppState) => user);
   const [isVisible, setIsVisible] = useState(false);
-  const [visibleModal, setVisibleModal] = useState(false);
-  const dispatch = useDispatch();
+  // const [visibleModal, setVisibleModal] = useState(false);
+  // const dispatch = useDispatch();
   const dropDownFields: DropDownItem[] = [
-    { id: 1, text: 'Logout', handleClick: () => setVisibleModal(true) }
+    // { id: 1, text: 'Logout', handleClick: () => setVisibleModal(true) }
   ];
   return (
     <header className={css.header}>
@@ -44,13 +44,13 @@ export const Header = ({ toggleBtn, isDropDownMenuActive }: HeaderProps) => {
           {picture ? <img src={picture} alt='Avatar' /> : <AiOutlineUser />}
         </div>
         {isVisible && <DropDown items={dropDownFields} closeDropDown={() => setIsVisible(false)} />}
-        {visibleModal && (
+        {/* {visibleModal && (
           <Modal
             title='Are you sure that you want to logout?'
             handleClick={() => dispatch(logout())}
             closeModal={() => setVisibleModal(false)}
           />
-        )}
+        )} */}
       </div>
     </header>
   );

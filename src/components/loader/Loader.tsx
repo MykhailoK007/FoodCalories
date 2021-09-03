@@ -1,6 +1,6 @@
 import React from 'react';
-import loader from '../../assets/icons/loader.gif';
-import styles from './styles.module.scss';
+// import loader from '../../assets/icons/loader.gif';
+// import styles from './styles.module.scss';
 
 interface LoaderProps {
   loaded: boolean;
@@ -8,5 +8,5 @@ interface LoaderProps {
 }
 export const Loader = ({ loaded = false, children }: LoaderProps) => {
   if (loaded) return <div>{children}</div>;
-  return <div>{!loaded && <img src={loader} alt='loader' className={styles.loader} />}</div>;
+  return <div>{!loaded && <div>Loading...</div>}</div>;
 };

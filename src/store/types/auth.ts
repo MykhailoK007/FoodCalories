@@ -1,9 +1,6 @@
 import { SignInBody, SignUpBody } from '../../api/auth/types';
 import * as AuthApi from '../actions/auth.actions';
 
-export type RequestTypeKeys = 'REQUEST' | 'SUCCESS' | 'FAILURE';
-export type IRequestType = Record<RequestTypeKeys, string>;
-
 export interface SignUpRequestAction {
   type: typeof AuthApi.SIGN_UP_REQUEST;
   payload: SignUpBody;

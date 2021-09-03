@@ -6,8 +6,8 @@ import { SignInBody } from '../../api/auth';
 import { FormikInput } from '../../components/formikAdapter/FormikInput';
 import { Input } from '../../components/Input/Input';
 import { SignUpRoute } from '../../router/routes';
-import { signIn } from '../../state/actions/auth.actions';
-import { AppState } from '../../state/store';
+import { signIn } from '../../store/actions/auth.actions';
+import { AppState } from '../../store/store';
 import { LoginForm } from '../../utils/validation-schemas';
 import css from './Auth.module.scss';
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { AiOutlineUser } from 'react-icons/ai';
 import cn from 'classnames';
-import { AppState } from '../../../../state/store';
+import { AppState } from '../../../../store/store';
 import css from './ProfileInfo.module.scss';
 
 interface ProfileInfoProps {

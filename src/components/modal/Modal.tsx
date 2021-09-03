@@ -6,6 +6,7 @@ interface ModalProps {
   title: string;
   handleClick(): void;
   closeModal(): void;
+  children: React.ReactNode;
 }
 const Modal = ({ title, handleClick, closeModal }: ModalProps) => {
   const modal: HTMLElement | null = document.getElementById('modal-root');

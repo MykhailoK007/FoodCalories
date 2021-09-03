@@ -1,17 +1,19 @@
-import { IRequestType, RequestTypeKeys } from '../state/types/auth';
+export enum typeofActions {
+  REQUEST = 'REQUEST',
+  SUCCESS = 'SUCCESS',
+  FAILURE = 'FAILURE'
+}
 
-const REQUEST: string = 'REQUEST';
-const SUCCESS: string = 'SUCCESS';
-const FAILURE: string = 'FAILURE';
-
-const initialStateCreateRequestTypes: IRequestType = {
-  REQUEST: '',
-  SUCCESS: '',
-  FAILURE: ''
+export type ActionCreatorTypes<T extends string> = {
+  SUCCESS: `${T}_${typeofActions.SUCCESS}`;
+  REQUEST: `${T}_${typeofActions.REQUEST}`;
+  FAILURE: `${T}_${typeofActions.FAILURE}`;
 };
 
-export const createRequestTypes = (base: string): IRequestType =>
-  [REQUEST, SUCCESS, FAILURE].reduce((acc: IRequestType, type: string) => {
-    acc[type as RequestTypeKeys] = `${base}_${type}`;
-    return acc;
-  }, initialStateCreateRequestTypes);
+// export function createRequestTypes<T extends string>(base: T): ActionCreatorTypes<T>{
+//   return {
+//     REQUEST: `${base}_${typeofActions.REQUEST}`,
+//   SUCCESS: `${base}_${typeofActions.SUCCESS}`,
+//   FAILURE: `${base}_${typeofActions.FAILURE}`
+//   }
+// }

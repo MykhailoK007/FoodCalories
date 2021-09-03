@@ -7,6 +7,6 @@ import rootSaga from './saga/index';
 const sagaMiddleWare = createSagaMiddleWare();
 
 const store = createStore(reducers, composeWithDevTools(applyMiddleware(sagaMiddleWare)));
-export type AppState = ReturnType<typeof reducers>;
+export type AppState = ReturnType<typeof store.getState>;
 sagaMiddleWare.run(rootSaga);
 export default store;

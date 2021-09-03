@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { InputProps } from '../../../../models/formik';
 import { FormikInput } from '../../../../components/formikAdapter/FormikInput';
 import { EditProfileForm } from '../../../../utils/validation-schemas';
-import { updateUserInfo } from '../../../../state/actions/user.actions';
-import { AppState } from '../../../../state/store';
+import { updateUserInfo } from '../../../../store/actions/user.actions';
+import { AppState } from '../../../../store/store';
 import css from './ProfileForm.module.scss';
 
 interface ProfileFormProps {

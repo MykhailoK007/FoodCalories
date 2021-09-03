@@ -2,7 +2,7 @@ import axios from 'axios';
 import { SignInRoute } from '../router/routes';
 
 const instance = axios.create({
-  baseURL: 'https://food-calories-app.herokuapp.com/api'
+  baseURL: 'http://localhost:3001/api'
 });
 
 instance.interceptors.request.use(req => {

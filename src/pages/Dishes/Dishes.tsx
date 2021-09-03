@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Pagination } from '@material-ui/lab';
 import { HeaderWrapper } from '../../components/pageWrappers';
@@ -7,6 +8,7 @@ import { Dish } from './components/dish';
 import { Filter } from './components/filter';
 import css from './Dishes.module.scss';
 import './Dishes.css';
+import { Ingredients } from '../../router/routes';
 
 export const Dishes = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -18,7 +20,9 @@ export const Dishes = () => {
     <div>
       <HeaderWrapper>
         <span>Dishes</span>
-        <button className={css.headerBtn}>Add own dish</button>
+        <Link to={Ingredients} className={css.headerBtn}>
+          Add own dish
+        </Link>
       </HeaderWrapper>
       <BodyWrapper>
         <header className={css.header}>

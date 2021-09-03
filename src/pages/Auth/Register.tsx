@@ -2,14 +2,14 @@ import { Formik, Form } from 'formik';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
-import { signUp } from '../../state/actions/auth.actions';
+import { signUp } from '../../store/actions/auth.actions';
 import { FormikInput } from '../../components/formikAdapter/FormikInput';
 import { Input } from '../../components/Input/Input';
 import { ProfileRoute, SignInRoute } from '../../router/routes';
 import { RegisterForm } from '../../utils/validation-schemas';
 import css from './Auth.module.scss';
 import { SignUpBody } from '../../api/auth';
-import { AppState } from '../../state/store';
+import { AppState } from '../../store/store';
 
 const defaultValues: SignUpBody = {
   email: '',
