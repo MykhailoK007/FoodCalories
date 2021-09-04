@@ -18,7 +18,6 @@ const tableHeadData = ['', 'Name', 'Description', 'Calories/100g', 'Actions'];
 //   { name: 'description', label: 'Description', type: 'text' }
 // ];
 // new comment
-// sssss
 
 const Ingredient = () => {
   // const [showModal, setShowModal] = useState(false);
