@@ -32,7 +32,7 @@ export const NewDish = ({ hideModal }: NewDishProps) => (
       validationSchema={NewDishForm}
     >
       <Form>
-        <div>
+        {/* <div>
           <select name='name' className={css.select}>
             <option value=''>''</option>
           </select>
@@ -40,7 +40,8 @@ export const NewDish = ({ hideModal }: NewDishProps) => (
         </div>
         <button type='submit' className={css.btnGreen}>
           Add
-        </button>
+        </button> */}
+        asdadasd
       </Form>
     </Formik>
   </div>

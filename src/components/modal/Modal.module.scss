@@ -14,7 +14,6 @@
   flex-direction: column;
   justify-content: center;
   width: 50%;
-  height: 200px;
   top: 40%;
   left: 50%;
   padding: 30px 50px;
@@ -30,6 +29,7 @@
   .buttonsWrapper {
     display: flex;
     justify-content: space-around;
+    margin-top: 20px;
     button {
       min-width: 60px;
       height: 30px;

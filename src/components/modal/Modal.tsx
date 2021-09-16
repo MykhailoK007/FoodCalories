@@ -4,11 +4,10 @@ import css from './Modal.module.scss';
 
 interface ModalProps {
   title: string;
-  handleClick(): void;
   closeModal(): void;
   children: React.ReactNode;
 }
-const Modal = ({ title, handleClick, closeModal }: ModalProps) => {
+const Modal = ({ title, closeModal, children }: ModalProps) => {
   const modal: HTMLElement | null = document.getElementById('modal-root');
   const div: HTMLDivElement = document.createElement('div');
   useEffect(() => {
@@ -21,8 +20,9 @@ const Modal = ({ title, handleClick, closeModal }: ModalProps) => {
     <div className={css.modalBg}>
       <div className={css.modalWrapper}>
         <div className={css.title}>{title}</div>
+        {children}
         <div className={css.buttonsWrapper}>
-          <button onClick={handleClick}>Accept</button>
+          {/* <button onClick={handleClick}>Accept</button> */}
           <button onClick={closeModal}>Cancel</button>
         </div>
       </div>
